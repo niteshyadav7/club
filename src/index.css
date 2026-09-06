@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+  --color-brand-950: #1e1b4b;
+
+  --color-forest-50: #eef2ff;
+  --color-forest-100: #e0e7ff;
+  --color-forest-200: #c7d2fe;
+  --color-forest-300: #a5b4fc;
+  --color-forest-400: #818cf8;
+  --color-forest-500: #6366f1;
+  --color-forest-600: #4f46e5;
+  --color-forest-700: #4338ca;
+  --color-forest-800: #212631;
+  --color-forest-900: #1d222b;
+  --color-forest-950: #141820;
+
+  --color-sage-50: #eef2ff;
+  --color-sage-100: #e0e7ff;
+  --color-sage-200: #c7d2fe;
+  --color-sage-300: #a5b4fc;
+  --color-sage-400: #818cf8;
+  --color-sage-500: #6366f1;
+
+  --color-gold-500: #eab308;
+  --color-gold-600: #ca8a04;
+
+  --color-pastel-sage: #95b3a4;
+  --color-pastel-sage-dark: #7a9c8c;
+  --color-pastel-sage-light: #b4ccbf;
+  --color-pastel-cream: #fafbf9;
+
+  --font-sans: "Plus Jakarta Sans", Inter, system-ui, -apple-system, sans-serif;
+  --font-script: "Dancing Script", "Pacifico", cursive;
+
+  --shadow-soft: 0 4px 20px -2px rgba(79, 70, 229, 0.08);
+  --shadow-card: 0 10px 30px -4px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-elevated: 0 20px 40px -8px rgba(79, 70, 229, 0.12);
+  --shadow-login: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  background-color: #f3f4f7;
+  color: #111827;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(224, 231, 255, 0.4) 0px, transparent 50%);
+}
+
+/* Custom Glass & Capsule Pill Styles */
+.pill-tab {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.pill-tab-active {
+  background-color: #eef2ff;
+  color: #4338ca;
+  font-weight: 700;
+  box-shadow: 0 1px 2px 0 rgba(79, 70, 229, 0.08);
+  border: 1px solid #c7d2fe;
+}
+
+.pill-tab-inactive {
+  color: #4b5563;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.pill-tab-inactive:hover {
+  color: #111827;
+  background-color: rgba(243, 244, 246, 0.8);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #ffffff;
+  background-color: #4f46e5;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 1px 3px 0 rgba(79, 70, 229, 0.25);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-sage,
+.btn-indigo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #4338ca;
+  background-color: #eef2ff;
+  border: 1px solid #c7d2fe;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-sage:hover,
+.btn-indigo:hover {
+  background-color: #e0e7ff;
+}
+
+.btn-sage:active,
+.btn-indigo:active {
+  transform: scale(0.98);
+}
+
+.card-luxury {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-luxury:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+.frosted-badge {
+  backdrop-filter: blur(12px);
+  background-color: rgba(33, 38, 49, 0.85);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Global Scrollbar Removal: Hide all visual scrollbars everywhere while keeping smooth touch/wheel scrolling */
+html,
+body,
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE & Edge */
+}
+
+*::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+div::-webkit-scrollbar,
+main::-webkit-scrollbar,
+form::-webkit-scrollbar,
+section::-webkit-scrollbar,
+nav::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+ul::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+.no-scrollbar::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.no-scrollbar,
+.custom-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
