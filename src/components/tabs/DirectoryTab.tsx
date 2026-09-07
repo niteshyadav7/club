@@ -71,18 +71,18 @@ export const DirectoryTab: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
-      {/* Hero Header */}
-      <div className="text-center max-w-2xl mx-auto pt-2 pb-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold mb-2.5 border border-indigo-200 shadow-2xs">
+      {/* Refined Header */}
+      <div className="text-center max-w-2xl mx-auto pt-1 pb-2 sm:pb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-gray-100/90 text-gray-600 text-[11px] font-semibold mb-2 border border-gray-200/70 shadow-2xs">
           <span>Community Directory</span>
-          <span>•</span>
-          <span>{filteredMembers.length} Members</span>
+          <span className="text-gray-300">•</span>
+          <span className="text-indigo-600 font-bold">{filteredMembers.length} Members</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
           Club Member Network
         </h2>
-        <p className="text-xs sm:text-sm text-gray-500 mt-2">
-          Explore fellow club members, leadership profiles, custom badges, and connect across sports & initiatives.
+        <p className="text-xs sm:text-sm text-gray-500 mt-1 max-w-lg mx-auto">
+          Explore fellow club members, leadership profiles, and custom badges.
         </p>
       </div>
 

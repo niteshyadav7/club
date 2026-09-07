@@ -15,6 +15,7 @@ import { MarkPaidModal } from '../components/MarkPaidModal';
 import { SubmitExpenseModal } from '../components/SubmitExpenseModal';
 import { EventDetailModal } from '../components/EventDetailModal';
 import { NotificationToasts } from '../components/NotificationToasts';
+import { MobileBottomNav } from '../components/MobileBottomNav';
 
 import { useAuth } from '../hooks/useAuth';
 
@@ -36,7 +37,7 @@ export const PublicPortalPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white sm:bg-[#f8f9fc] text-gray-900 selection:bg-indigo-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-white sm:bg-[#f8f9fc] text-gray-900 selection:bg-indigo-600 selection:text-white pb-20 md:pb-0">
       {/* Main Luxury Navigation Bar (Only for verified members) */}
       <Navbar />
 
@@ -44,13 +45,16 @@ export const PublicPortalPage: React.FC = () => {
       <CelebrationBanner />
 
       {/* Main Content Area with Member Tabs */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         {/* Tab Routing */}
         {activeTab === 'directory' && <DirectoryTab />}
         {activeTab === 'dues' && <DuesTab />}
         {activeTab === 'expenses' && <ExpensesTab />}
         {activeTab === 'events' && <EventsTab />}
       </main>
+
+      {/* Mobile Ergonomic Bottom Navigation Bar */}
+      <MobileBottomNav />
 
       {/* All Global Modals */}
       <ProfileEditModal />

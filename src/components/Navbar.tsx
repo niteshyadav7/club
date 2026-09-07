@@ -93,41 +93,25 @@ export const Navbar: React.FC = () => {
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200/90 shadow-2xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-3">
           
-          {/* ─── LEFT: Hamburger Button & ClubSphere Brand Logo ─── */}
-          <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
-            
-            {/* Mobile Hamburger Button */}
-            {!isPending && (
-              <button
-                type="button"
-                onClick={() => setIsMobileMenuOpen(true)}
-                className="md:hidden p-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 transition cursor-pointer flex items-center justify-center shadow-2xs active:scale-95 shrink-0 border border-gray-200/80"
-                aria-label="Open Navigation Menu"
-              >
-                <Menu className="w-4 h-4 text-gray-900" />
-              </button>
-            )}
-
-            {/* Brand Logo & Name */}
-            <div 
-              onClick={() => !isPending && dispatch(setActiveTab('directory'))}
-              className="flex items-center gap-2 sm:gap-2.5 cursor-pointer group min-w-0"
-            >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-center font-black text-xs sm:text-sm shadow-sm group-hover:scale-105 transition-transform duration-200 ring-1 sm:ring-2 ring-indigo-400/30 shrink-0">
-                <span className="bg-gradient-to-tr from-indigo-300 via-sky-300 to-white bg-clip-text text-transparent font-black tracking-tight">CS</span>
-              </div>
-              <div className="min-w-0 flex flex-col justify-center">
-                <h1 className="text-sm sm:text-base md:text-lg font-black tracking-tight flex items-center gap-1 sm:gap-1.5 truncate leading-tight">
-                  <span className="text-gray-900 font-black">Club</span>
-                  <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-600 bg-clip-text text-transparent font-black">Sphere</span>
-                  <span className="px-1.5 py-0.5 rounded-md text-[8px] sm:text-[9px] font-black tracking-wider uppercase bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-2xs shrink-0">
-                    PRO
-                  </span>
-                </h1>
-                <p className="hidden sm:block text-[9px] sm:text-[10px] font-bold text-gray-400 tracking-wider uppercase leading-none mt-0.5">
-                  Community Governance Hub
-                </p>
-              </div>
+          {/* ─── LEFT: ClubSphere Brand Logo ─── */}
+          <div 
+            onClick={() => !isPending && dispatch(setActiveTab('directory'))}
+            className="flex items-center gap-2 sm:gap-2.5 cursor-pointer group min-w-0"
+          >
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-center font-black text-xs sm:text-sm shadow-sm group-hover:scale-105 transition-transform duration-200 ring-1 sm:ring-2 ring-indigo-400/30 shrink-0">
+              <span className="bg-gradient-to-tr from-indigo-300 via-sky-300 to-white bg-clip-text text-transparent font-black tracking-tight">CS</span>
+            </div>
+            <div className="min-w-0 flex flex-col justify-center">
+              <h1 className="text-sm sm:text-base md:text-lg font-black tracking-tight flex items-center gap-1 sm:gap-1.5 truncate leading-tight">
+                <span className="text-gray-900 font-black">Club</span>
+                <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-600 bg-clip-text text-transparent font-black">Sphere</span>
+                <span className="px-1.5 py-0.5 rounded-md text-[8px] sm:text-[9px] font-black tracking-wider uppercase bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-2xs shrink-0">
+                  PRO
+                </span>
+              </h1>
+              <p className="hidden sm:block text-[9px] sm:text-[10px] font-bold text-gray-400 tracking-wider uppercase leading-none mt-0.5">
+                Community Governance Hub
+              </p>
             </div>
           </div>
 
@@ -155,9 +139,21 @@ export const Navbar: React.FC = () => {
             </nav>
           )}
 
-          {/* ─── RIGHT: Notification & User Profile Pill ─── */}
+          {/* ─── RIGHT: Mobile Hamburger Button & Desktop User Profile Pill ─── */}
           <div className="flex items-center gap-2 sm:gap-3">
             
+            {/* Mobile Hamburger Button (Top Right on mobile) */}
+            {!isPending && (
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="md:hidden p-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 transition cursor-pointer flex items-center justify-center shadow-2xs active:scale-95 shrink-0 border border-gray-200/80"
+                aria-label="Open Navigation Menu"
+              >
+                <Menu className="w-4.5 h-4.5 text-gray-900" />
+              </button>
+            )}
+
             {/* Push Notification Button (Desktop) */}
             {!isPending && (
               <button
@@ -172,9 +168,9 @@ export const Navbar: React.FC = () => {
               </button>
             )}
 
-            {/* User Profile Pill */}
+            {/* User Profile Pill (Desktop Only) */}
             {currentUser ? (
-              <div className="flex items-center gap-1.5 sm:gap-2 bg-white pl-1.5 sm:pl-2 pr-2 sm:pr-3 py-1 sm:py-1.5 rounded-full border border-gray-200 shadow-2xs">
+              <div className="hidden md:flex items-center gap-1.5 sm:gap-2 bg-white pl-1.5 sm:pl-2 pr-2 sm:pr-3 py-1 sm:py-1.5 rounded-full border border-gray-200 shadow-2xs">
                 <button
                   onClick={() => !isPending && dispatch(setProfileEditModalOpen(true))}
                   className="flex items-center gap-2 text-left group cursor-pointer"
@@ -210,7 +206,7 @@ export const Navbar: React.FC = () => {
             ) : (
               <button
                 onClick={() => dispatch(setGoogleModalOpen(true))}
-                className="btn-primary py-1.5 sm:py-2 px-4 sm:px-5 text-xs font-bold shadow-sm"
+                className="hidden md:flex btn-primary py-1.5 sm:py-2 px-4 sm:px-5 text-xs font-bold shadow-sm"
               >
                 Sign In
               </button>

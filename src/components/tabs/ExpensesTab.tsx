@@ -35,28 +35,28 @@ export const ExpensesTab: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
-      {/* Hero Header */}
-      <div className="text-center max-w-2xl mx-auto pt-2 pb-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold mb-2.5 border border-indigo-200">
+      {/* Refined Header */}
+      <div className="text-center max-w-2xl mx-auto pt-1 pb-2 sm:pb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-gray-100/90 text-gray-600 text-[11px] font-semibold mb-2 border border-gray-200/70 shadow-2xs">
           <span>Financial Governance</span>
-          <span>•</span>
-          <span>Complete Ledger</span>
+          <span className="text-gray-300">•</span>
+          <span className="text-purple-700 font-bold">Expense Ledger</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-          Club Expense & Reimbursement Ledger
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
+          Club Expense Ledger
         </h2>
-        <p className="text-sm text-gray-600 mt-2">
-          Transparent balance sheet, itemized vendor disbursements, and authorized fund request workflows for Core Members.
+        <p className="text-xs sm:text-sm text-gray-500 mt-1 max-w-lg mx-auto">
+          Balance sheet, itemized vendor disbursements, and authorized claims.
         </p>
       </div>
 
       {/* Financial Overview Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Total Budget */}
-        <div className="card-luxury p-5 border-l-4 border-l-slate-800">
+        <div className="card-luxury p-5 border-l-4 border-l-indigo-600">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Annual Budget</span>
-            <div className="w-8 h-8 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center">
               <Wallet className="w-4 h-4" />
             </div>
           </div>
@@ -117,20 +117,20 @@ export const ExpensesTab: React.FC = () => {
         </div>
       </div>
 
-      {/* Core Member Action Bar */}
-      <div className="bg-gradient-to-r from-[#1d222b] via-[#212631] to-[#2a303d] text-white rounded-3xl p-5 shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4 border border-gray-800">
-        <div className="flex items-center gap-3.5">
-          <div className="w-10 h-10 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+      {/* Core Member Action Bar (Light Luxury Executive Card) */}
+      <div className="bg-gradient-to-r from-indigo-50/80 via-white to-blue-50/60 rounded-3xl p-4 sm:p-5 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4 border border-indigo-100">
+        <div className="flex items-center gap-3.5 min-w-0">
+          <div className="w-10 h-10 rounded-2xl bg-indigo-100/90 text-indigo-700 flex items-center justify-center border border-indigo-200/80 shrink-0">
             <FileText className="w-5 h-5" />
           </div>
-          <div>
-            <div className="text-sm font-extrabold text-white flex items-center gap-2">
+          <div className="min-w-0">
+            <div className="text-sm font-bold text-gray-900 flex items-center gap-2 flex-wrap">
               Core Member Reimbursement Portal
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-700 border border-indigo-200">
                 Authorized Access
               </span>
             </div>
-            <p className="text-xs text-gray-300 mt-0.5">
+            <p className="text-xs text-gray-500 mt-0.5">
               {isCoreMember
                 ? 'Submit an invoice or vendor bill for club committee review & reimbursement.'
                 : 'Expense submission is restricted to Core Members. Regular members have full view-only transparency.'}
@@ -141,13 +141,13 @@ export const ExpensesTab: React.FC = () => {
         {isCoreMember ? (
           <button
             onClick={() => dispatch(setExpenseModalOpen(true))}
-            className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full font-bold text-xs transition shadow-sm flex items-center justify-center gap-2 shrink-0 active:scale-95 border border-indigo-400/30"
+            className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full font-bold text-xs transition shadow-sm flex items-center justify-center gap-2 shrink-0 active:scale-95 cursor-pointer"
           >
             <PlusCircle className="w-4 h-4 text-white" />
             <span>Submit Expense Claim</span>
           </button>
         ) : (
-          <span className="text-xs text-gray-400 italic bg-white/10 px-3 py-1.5 rounded-full">
+          <span className="text-xs text-gray-500 font-medium bg-white/80 border border-gray-200 px-3 py-1.5 rounded-full shrink-0 shadow-2xs">
             🔒 Core Member Only Feature
           </span>
         )}

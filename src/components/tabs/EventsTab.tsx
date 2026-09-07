@@ -29,18 +29,18 @@ export const EventsTab: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
-      {/* Hero Header */}
-      <div className="text-center max-w-2xl mx-auto pt-2 pb-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold mb-2.5 border border-indigo-200">
-          <span>Event Highlights & Media</span>
-          <span>•</span>
-          <span>Budget Clarity</span>
+      {/* Refined Header */}
+      <div className="text-center max-w-2xl mx-auto pt-1 pb-2 sm:pb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-gray-100/90 text-gray-600 text-[11px] font-semibold mb-2 border border-gray-200/70 shadow-2xs">
+          <span>Events & Media</span>
+          <span className="text-gray-300">•</span>
+          <span className="text-amber-700 font-bold">Community Calendar</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-          Club Events & Transparency
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
+          Club Events & Media
         </h2>
-        <p className="text-sm text-gray-600 mt-2">
-          Discover upcoming tournaments, past event highlights, Instagram reels, and complete itemized budget spend transparency.
+        <p className="text-xs sm:text-sm text-gray-500 mt-1 max-w-lg mx-auto">
+          Upcoming tournaments, past highlights, and complete budget spend transparency.
         </p>
       </div>
 
