@@ -3,14 +3,14 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// Web app's Firebase configuration
+// Web app's Firebase configuration with Vite environment variable support
 export const firebaseConfig = {
-  apiKey: "AIzaSyC7h44bkM5217V0QaIkBTZokMtaGQaWJJw",
-  authDomain: "club-ecd44.firebaseapp.com",
-  projectId: "club-ecd44",
-  storageBucket: "club-ecd44.firebasestorage.app",
-  messagingSenderId: "100476508209",
-  appId: "1:100476508209:web:c24a5000a4c2b11c2d1d10"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyC7h44bkM5217V0QaIkBTZokMtaGQaWJJw",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "club-ecd44.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "club-ecd44",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "club-ecd44.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "100476508209",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:100476508209:web:c24a5000a4c2b11c2d1d10"
 };
 
 // Initialize Firebase safely
